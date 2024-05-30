@@ -20,13 +20,13 @@
                             <p class="card-text">{{ '$ ' . $product->price}}</p>
                         </div>
                     </div>
+                    <form action="{{ route('checkout') }}" method="POST" class="mx-3 my-2" enctype="multipart/form-data">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Checkout</button>
+                    </form>
                 </div>
                 @endforeach
             </div>
-            <form action="{{ route('checkout') }}" method="POST" class="mx-3 my-2" enctype="multipart/form-data">
-                @csrf
-                <button type="submit" class="btn btn-primary">Checkout</button>
-            </form>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     </body>
